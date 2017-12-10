@@ -22,7 +22,7 @@ address,caption,cite,code,dfn,em,strong,th,var {
 strong{
 	font-weight: bold;
 }
-ol,ul {
+ul {
     list-style: none;
     margin:0;
     padding:0;
@@ -47,23 +47,57 @@ abbr,acronym { border: 0;
 
 /* Custom CSS
  * --------------------------------------- */
+
+
 body{
 	font-family: arial,helvetica;
 	color: #333;
 	color: rgba(0,0,0,0.5);
 }
 
+#section0, #section2 {
+    color: antiquewhite;
+}
+
 h1{
 	font-size: 3em;
 }
-p{
+p {
 	font-size: 2em;
 }
+
+.col-sm-5 {
+    margin-top: 4%;
+}
+
+img.zip1, img.zip2 {
+    width: 70%;
+    height: 70%;
+}
+
+img.race, img.age {
+    width: 130%;
+    height: 130%;
+    padding-right: 60%;
+}
+
 .intro p{
 	width: 50%;
 	margin: 0 auto;
 	font-size: 1.5em;
 }
+
+li{
+    font-weight: bold;
+    line-height: 150%;
+    font-size: 15px;
+}
+
+ol {
+    text-align: left;
+    margin-left: 35%;
+}
+
 .section{
 	text-align:center;
 }
