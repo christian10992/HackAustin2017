@@ -54,13 +54,32 @@
 		});
 	</script>
 
+    
+    
+    
+ <script type="text/javascript" src="cal-heatmap.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+crossorigin=""></script>
+<script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
+<style>
+#mapid {
+height: 500px;
+width:500px;
+}
+</style>   
+
 </head>
 <body>
 
 
 <ul id="menu">
-	<li data-menuanchor="firstPage"><a href="#firstPage">First slide</a></li>
-	<li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
+	<li data-menuanchor="firstPage"><a href="#firstPage">Introduction</a></li>
+	<li data-menuanchor="secondPage"><a href="#secondPage">Geographical Information</a></li>
 	<li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
 	<li data-menuanchor="4thpage"><a href="#4thpage">Fourth slide</a></li>
 </ul>
@@ -78,16 +97,33 @@
 	<div class="section" id="section1">
 		<div class="slide">
 			<div class="intro">
-				<h1>Page 2</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<img src="" alt="insert image here" />
+				<h1>Geographical Information</h1>
+                <br><br>
+				<p>We processed Austin's zip codes by the following factors: </p>
+                <br><br>
+                <ul><li>Median Household Income</li>
+                    <li>Population Density</li>
+                    <li>Urbanicity</li>
+                    <li>Level of Education</li>
+                    <li>Employment</li>
+                    <li>Age Range</li>
+                    <li>Family Characteristics</li>
+                    <li>Amount of Home Owners</li>
+                </ul>
 			</div>
 
 		</div>
 		<div class="slide">
 			<div class="intro">
-				<h1>Page 2, Slide 1</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h1>Target Areas</h1>
+                <br><br>
+				<p>By this data, the zip codes were grouped into five clusters. We found that one cluster in particular was found to be highly correlated with both police shootings and 911 calls, and had the following traits:</p>
+                <br><br>
+                <ul><li>40% more densely populated than the city's average</li>
+                    <li>Renter Saturated and only in the 4th percentile in the U.S. for owner occupied areas</li>
+                    <li>A median household income of $33,000, almost half of the average for Austin</li>
+                    <li>33% are degree-holders, 10% less than the city average.</li>
+                </ul>
 			</div>
 		</div>
 		<div class="slide">
@@ -98,8 +134,9 @@
 		</div>
 		<div class="slide">
 			<div class="intro">
-				<h1>Page 2, Slide 2</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h1>Page 2, Slide 3</h1>
+				<p></p>
+                <div id="mapid"></div>
 			</div>
 		</div>
 	</div>
@@ -121,5 +158,23 @@
 	</div>
 </div>
 
+    
+<script>
+
+
+var mymap = L.map('mapid').setView([30.281,-97.630],7);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+id: 'dibbs.cjb0ayl451qcr32qkclsqb2ve-5a2pn',
+maxZoom: 16,
+minZoom: 7,
+style:'mapbox://styles/dibbs/cjb0b5szkplfb2rkaj4vyuesd',
+accessToken: 'pk.eyJ1IjoiZGliYnMiLCJhIjoiY2o4cXBweHRzMGx1dDMzcW9ud2l2aDB6dSJ9.U3iwOBvWQExV9Wxxmp7DVw'
+}).addTo(mymap);
+
+
+
+
+</script>
+    
 </body>
 </html>
